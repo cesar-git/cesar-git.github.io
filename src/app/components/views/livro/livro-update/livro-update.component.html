@@ -1,0 +1,27 @@
+<form>
+    <h1>ATUALIZANDO NOVO LIVRO</h1>
+
+    <mat-form-field class="form">
+        <mat-label>Título</mat-label>
+        <input matInput [(ngModel)]="livro.titulo" required name="titulo" type="text" placeholder="Ex. Curso Spring Boot com Angular 10" maxlength="100">
+        <!--<mat-error *ngIf="titulo.invalid">{{ getMessage() }}</mat-error>-->
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>Nome do Autor</mat-label>
+        <input matInput [(ngModel)]="livro.nome_autor" required name="nome_autor" type="text" placeholder="Ex. Valdir Cezar" maxlength="100">
+        <!--<mat-error *ngIf="nome_autor.invalid">{{ getMessage() }}</mat-error>-->
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>Texto</mat-label>
+        <textarea matInput [(ngModel)]="livro.texto" required name="texto" type="text" placeholder="Ex. Lorem ipsum" maxlength="2000000"></textarea>
+        <!--<mat-error *ngIf="texto.invalid">{{ getMessage() }}</mat-error>-->
+    </mat-form-field>
+
+    <div class="buttons">
+        <button (click)="update()" [disabled]="getMessage()" class="mat-elevation-z8" mat-stroked-button color="primary">ATUALIZAR</button>
+        <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn">CANCELAR</button>
+    </div>
+
+</form>
